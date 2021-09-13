@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+#root {
+  height:100%;
+}
+/* main */
+.container {
+  display: grid;
+  grid-template-areas:
+  'header'
+  'main'
+  'footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+
+}
+header {
+  grid-area: header;
+  background-color: #203040;
+  color: #ffffff;
+}
+main{
+  grid-area: main;
+  padding: 1rem;
+}
+footer{
+  grid-area: footer;
+  color: #ffffff;
+  margin-right: 200px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.row.center{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  text-align: center; 
+}
+.row.end {
+  justify-content: flex-end;
+}
+.buttonContainer {
+  margin-top: 15px;
+}
+.select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+/* table */
+.table{
+  width: 100%; 
+  table-layout:auto;
+  border-collapse: collapse;
+  border: 0.1rem solid #0a0101;  
+  
+}
+.table tbody tr:nth-of-type(odd){
+   background-color: #f5faf6; 
+}
+.table td {
+  text-align: left;
+  border: 0.1rem solid #c2b6b6;
+  padding: 0.5rem;
+  width: auto;
+  color:black;
+}
+table tr:hover {background-color: rgb(220, 223, 219);}
+table th, tfoot{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  color:white;
+}
+table td,th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+table tr{
+  text-align: left;
+}
+table th{
+  text-align: left;
+  background: #f36b24;  
+  color: white; 
+}
+
+.table button {
+  margin: 0 0.2rem;
+}
+
+.table tr th td:last-child {
+  border: 0.1rem solid #180707;
+  }
+  /* input */
+ .input{
+  float: right;
+  border-radius: 0.5rem;
+  width:20%;
+  outline:none;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 2px solid #AAA;
+  margin-bottom: 15px;
+}
+
+.input-dt{
+  border-radius: 0.5rem;
+  width:45%;
+  outline:none;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 2px solid #AAA;
+  margin-bottom: 5px;
+}
+.input-modal{
+  width:35%;
+  border-radius: 0.5rem;
+  outline:none;
+  padding: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border:none;
+  border: 2px solid #AAA;
+  margin-top: 25px;
+}
+
+@media all and (max-width: 700px){
+  .row {
+    flex-direction: column;
+  }
+  .row.end {
+    justify-content: flex-start; 
+    width:170%;
+  }
+  .col.text-center {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .main.row.center {
+    margin-top: 5px;
+  }
+  /* table */
+  table {
+    margin-top: 130px;
+  }
+  thead{
+    display: none;
+  }
+
+  td{
+    display: block;
+  }
+
+  td:first-child{
+    background-color: #f36b24; 
+    color: #fff;
+    text-align: center;
+  }
+  
+  td:nth-child(2)::before{
+    content: "Name";
+  }
+
+  td:nth-child(3)::before{
+    content: "Type";
+  }
+
+  td:nth-child(4)::before{
+    content: "Availability";
+  }
+
+  td:nth-child(5)::before{
+    content: "Repair ?";
+  }
+  td:nth-child(6)::before{
+    content: "Durability";
+  }
+  td:nth-child(7)::before{
+    content: "Max.Durability";
+  }
+  td:nth-child(8)::before{
+    content: "Milage";
+  }
+  td:nth-child(9)::before{
+    content: "Price";
+  }
+  td:nth-child(10)::before{
+    content: "Rental Period";
+  }
+  td{
+    text-align: right;
+  }
+
+  td::before{
+    float: left;
+    margin-right: 3rem;
+    font-weight: bold;
+  }
+}
